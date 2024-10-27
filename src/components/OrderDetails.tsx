@@ -17,7 +17,7 @@ const tipOptions = [
   { id: "tip-0", value: 0, label: "No tip" },
 ];
 
-export const OrderReceipt = ({
+export const OrderDetails = ({
   order,
   removeItem,
   saveOrder,
