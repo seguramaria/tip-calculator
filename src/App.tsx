@@ -1,7 +1,5 @@
 import MenuItems from "./components/MenuItems";
-import { Order } from "./components/Order";
-import { OrderTotals } from "./components/OrderTotals";
-import { TipPercentageForm } from "./components/TipPercentageForm";
+import { OrderReceipt } from "./components/OrderReceipt";
 import { menuItems } from "./data/db";
 import useOrder from "./hooks/useOrder";
 
@@ -24,9 +22,13 @@ function App() {
         <div className="p-5 border border-dashed border-slate-300 rounded-lg space-y-10">
           {order.length > 0 ? (
             <>
-              <Order order={order} removeItem={removeItem} />
-              <TipPercentageForm setTip={setTip} tip={tip} />
-              <OrderTotals order={order} tip={tip} saveOrder={saveOrder} />
+              <OrderReceipt
+                order={order}
+                removeItem={removeItem}
+                saveOrder={saveOrder}
+                tip={tip}
+                setTip={setTip}
+              />
             </>
           ) : (
             <p>The order is empty.</p>
