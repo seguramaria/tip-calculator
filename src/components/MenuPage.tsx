@@ -15,14 +15,17 @@ export const MenuPage = () => {
     ? data.filter((category) => category.name === selectedCategory)
     : data;
 
-  const filteredItems = filteredCategories.flatMap((category) =>
-    category.products.filter((item) =>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-  );
+  const filteredItems = searchTerm
+    ? data.flatMap((category) =>
+        category.products.filter((item) =>
+          item.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+      )
+    : filteredCategories.flatMap((category) => category.products);
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
+    setSearchTerm("");
   };
 
   const selectedCategoryData = data.find(
