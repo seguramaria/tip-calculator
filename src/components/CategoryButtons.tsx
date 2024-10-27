@@ -12,7 +12,7 @@ const CategoryButtons = ({
   activeCategory,
 }: Props) => {
   return (
-    <div className="flex space-x-2 mb-10 p-2 overflow-x-auto scrollbar-hide">
+    <div className="flex space-x-2 py-4 overflow-x-auto scrollbar-hide">
       {categories.map((category) => (
         <button
           key={category.id}

@@ -10,7 +10,7 @@ export const Search = ({ setSearchTerm, searchTerm }: Props) => {
     setSearchTerm(searchTerm.trim());
   };
   return (
-    <div className="relative mb-10">
+    <div className="relative mb-4">
       <input
         type="text"
         value={searchTerm}

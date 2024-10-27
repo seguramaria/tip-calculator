@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.scrollbar-hide::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
