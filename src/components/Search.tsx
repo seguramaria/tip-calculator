@@ -16,7 +16,7 @@ export const Search = ({ setSearchTerm, searchTerm }: Props) => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search products..."
-        className="w-full rounded-2xl p-2 shadow-md focus:outline-none pr-10"
+        className="w-full rounded-2xl p-3 shadow-md focus:outline-none pr-10"
       />
       <button
         onClick={handleSearch}

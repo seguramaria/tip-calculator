@@ -35,7 +35,7 @@ export const MenuPage = () => {
 
   return (
     <>
-      <header className="bg-[#FFFFFF]  text-[#333333] w-full">
+      <header className="bg-[#FFFFFF] text-[#333333] w-full">
         <div className="max-w-7xl pt-20 p-5 mx-auto flex items-end justify-between px-5 py-3">
           <div className="flex items-center">
             <span className="p-2 mr-2">
@@ -64,40 +64,42 @@ export const MenuPage = () => {
         </div>
       </header>
 
-      <div className="bg-[#FFFFFF] text-[#333333] flex justify-center items-start flex-col">
-        <main className="max-w-7xl grid md:grid-cols-2 mx-auto py-20">
-          <div className="p-5">
-            <Search setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
-            <CategoryButtons
-              categories={data}
-              activeCategory={selectedCategory}
-              onSelectCategory={handleCategorySelect}
-            />
-
-            {selectedCategoryData && (
-              <div className="my-4 bg-[#FFEBC1] rounded-3xl p-6 flex justify-center">
-                <img
-                  src={`./img/categories/${selectedCategoryData.img}`}
-                  alt={selectedCategoryData.name}
-                  className="max-w-[30%] h-auto object-cover"
+      <div className="bg-[#FFFFFF] text-[#333333] flex justify-center items-center flex-col">
+        <main className="w-full overflow-hidden">
+          <div className="max-w-7xl mx-auto py-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 p-5">
+              <div className="p-5 space-y-4">
+                <Search setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+                <CategoryButtons
+                  categories={data}
+                  activeCategory={selectedCategory}
+                  onSelectCategory={handleCategorySelect}
+                />
+                {selectedCategoryData && (
+                  <div className="my-4 bg-[#FFEBC1] rounded-3xl p-6 flex justify-center">
+                    <img
+                      src={`./img/categories/${selectedCategoryData.img}`}
+                      alt={selectedCategoryData.name}
+                      className="max-w-[30%] h-auto object-cover"
+                    />
+                  </div>
+                )}
+                <ul className="space-y-3 my-4">
+                  {filteredItems.map((item) => (
+                    <MenuItems key={item.id} item={item} addItem={addItem} />
+                  ))}
+                </ul>
+              </div>
+              <div className="p-5 space-y-10 hidden md:block">
+                <OrderDetails
+                  order={order}
+                  removeItem={removeItem}
+                  saveOrder={saveOrder}
+                  tip={tip}
+                  setTip={setTip}
                 />
               </div>
-            )}
-
-            <ul className="space-y-3 my-4">
-              {filteredItems.map((item) => (
-                <MenuItems key={item.id} item={item} addItem={addItem} />
-              ))}
-            </ul>
-          </div>
-          <div className="p-5 space-y-10 hidden md:block">
-            <OrderDetails
-              order={order}
-              removeItem={removeItem}
-              saveOrder={saveOrder}
-              tip={tip}
-              setTip={setTip}
-            />
+            </div>
           </div>
         </main>
       </div>
