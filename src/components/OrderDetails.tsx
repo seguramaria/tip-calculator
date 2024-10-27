@@ -36,8 +36,8 @@ export const OrderDetails = ({
   );
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md border-dashed border-2 border-gray-300 max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-center mb-4">Receipt</h2>
+    <div className="bg-white p-6 shadow-md border border-dashed border-slate-300 rounded-lg max-w-md mx-auto">
+      <h2 className="text-2xl font-light text-center mb-4">Order Details</h2>
 
       <ul className="space-y-4">
         {order.map((item) => (
@@ -49,7 +49,7 @@ export const OrderDetails = ({
             <div className="text-right">
               <p>{formatCurrency(item.price * item.quantity)}</p>
               <button
-                className="text-red-500 text-xs mt-1"
+                className="text-[#F76D6A] text-xs mt-1"
                 onClick={() => removeItem(item.id)}
               >
                 Remove
@@ -95,11 +95,11 @@ export const OrderDetails = ({
       </div>
 
       <button
-        className="w-full mt-4 bg-teal-500 p-2 text-white font-bold rounded"
+        className="w-full mt-4 bg-[#F76D6A] p-2 text-white font-bold rounded"
         disabled={totalAmount === 0}
         onClick={() => saveOrder()}
       >
-        Save order
+        Place order
       </button>
     </div>
   );
