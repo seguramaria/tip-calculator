@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { MenuItem, OrderItem } from "../types";
+import { Product, OrderItem } from "../types";
 
 const useOrder = () => {
   const [order, setOrder] = useState<OrderItem[]>([]);
   const [tip, setTip] = useState(0);
-  const addItem = (item: MenuItem) => {
+  const addItem = (item: Product) => {
     const itemAlreadyAdded = order.find(
       (orderItem) => orderItem.id === item.id
     );
@@ -26,7 +26,6 @@ const useOrder = () => {
   };
 
   const saveOrder = () => {
-    console.log("saved");
     setOrder([]);
     setTip(0);
   };

@@ -11,13 +11,12 @@ const CategoryButtons = ({
   onSelectCategory,
   activeCategory,
 }: Props) => {
-  console.log(activeCategory);
   return (
-    <div className="flex space-x-2 mb-10">
+    <div className="flex space-x-2 mb-10 p-2 overflow-x-auto scrollbar-hide">
       {categories.map((category) => (
         <button
           key={category.id}
-          className={`p-2 rounded-xl shadow-md ${
+          className={`p-2 rounded-xl shadow-md whitespace-nowrap ${
             activeCategory === category.name
               ? "bg-[#F76D6A] text-white"
               : "bg-white text-black"
