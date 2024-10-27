@@ -19,24 +19,24 @@ export const data: Category[] = [
   },
   {
     id: 2,
-    name: "Sandwiches",
+    name: "Hot Dogs",
     img: "2.svg",
-    url: "/sandwiches",
+    url: "/hot-dogs",
     products: [
-      { id: 9, name: "Turkey Club Sandwich", price: 10.99 },
-      { id: 10, name: "BLT Sandwich", price: 8.99 },
-      { id: 11, name: "Caprese Sandwich", price: 7.49 },
-      { id: 12, name: "Grilled Cheese Sandwich", price: 5.99 },
-      { id: 13, name: "Chicken Salad Sandwich", price: 9.49 },
-      { id: 14, name: "Tuna Melt Sandwich", price: 9.99 },
-      { id: 15, name: "Pulled Pork Sandwich", price: 11.49 },
-      { id: 16, name: "Egg Salad Sandwich", price: 6.49 },
+      { id: 9, name: "Classic Hot Dog", price: 5.99 },
+      { id: 10, name: "Chili Cheese Dog", price: 6.49 },
+      { id: 11, name: "Chicago Style Hot Dog", price: 7.49 },
+      { id: 12, name: "New York Style Hot Dog", price: 6.99 },
+      { id: 13, name: "BBQ Pulled Pork Dog", price: 8.99 },
+      { id: 14, name: "Buffalo Chicken Dog", price: 7.99 },
+      { id: 15, name: "Veggie Hot Dog", price: 4.99 },
+      { id: 16, name: "Bacon-Wrapped Hot Dog", price: 8.49 },
     ],
   },
   {
     id: 3,
     name: "Salads",
-    img: "3.svg",
+    img: "6.svg",
     url: "/salads",
     products: [
       { id: 17, name: "Caesar Salad", price: 9.49 },
@@ -52,7 +52,7 @@ export const data: Category[] = [
   {
     id: 4,
     name: "Sides",
-    img: "4.svg",
+    img: "5.svg",
     url: "/sides",
     products: [
       { id: 25, name: "French Fries", price: 3.99 },
@@ -68,7 +68,7 @@ export const data: Category[] = [
   {
     id: 5,
     name: "Drinks",
-    img: "5.svg",
+    img: "3.svg",
     url: "/drinks",
     products: [
       { id: 33, name: "Cola", price: 1.99 },
@@ -84,7 +84,7 @@ export const data: Category[] = [
   {
     id: 6,
     name: "Juices",
-    img: "6.svg",
+    img: "4.svg",
     url: "/juices",
     products: [
       { id: 41, name: "Orange Juice", price: 3.99 },

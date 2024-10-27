@@ -79,7 +79,7 @@ export const OrderDetails = ({
       </div>
 
       <div className="mt-6 space-y-2">
-        <h3 className="text-lg font-bold">Totales</h3>
+        <h3 className="text-lg font-bold">Totals</h3>
         <p className="flex justify-between">
           <span>Subtotal:</span>
           <span>{formatCurrency(subtotalAmount)}</span>

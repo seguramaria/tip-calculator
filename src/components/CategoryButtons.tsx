@@ -13,7 +13,7 @@ const CategoryButtons = ({
 }: Props) => {
   console.log(activeCategory);
   return (
-    <div className="flex space-x-2">
+    <div className="flex space-x-2 mb-10">
       {categories.map((category) => (
         <button
           key={category.id}
