@@ -5,12 +5,14 @@ import { data } from "../data/db";
 import useOrder from "../hooks/useOrder";
 import CategoryButtons from "./CategoryButtons";
 import { Search } from "./Search";
+import OrderPlacedModal from "./OrderPlacedModal";
 
 export const MenuPage = () => {
   const { addItem, order, removeItem, tip, setTip, saveOrder } = useOrder();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("Burgers");
   const [showOrderDetails, setShowOrderDetails] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const filteredCategories = selectedCategory
     ? data.filter((category) => category.name === selectedCategory)
@@ -32,6 +34,11 @@ export const MenuPage = () => {
   const selectedCategoryData = data.find(
     (category) => category.name === selectedCategory
   );
+
+  const handleSaveOrder = () => {
+    setShowModal(true);
+    saveOrder();
+  };
 
   return (
     <>
@@ -94,7 +101,7 @@ export const MenuPage = () => {
                 <OrderDetails
                   order={order}
                   removeItem={removeItem}
-                  saveOrder={saveOrder}
+                  saveOrder={handleSaveOrder}
                   tip={tip}
                   setTip={setTip}
                 />
@@ -120,13 +127,13 @@ export const MenuPage = () => {
           <OrderDetails
             order={order}
             removeItem={removeItem}
-            saveOrder={saveOrder}
+            saveOrder={handleSaveOrder}
             tip={tip}
             setTip={setTip}
           />
         </div>
       )}
-
+      {showModal && <OrderPlacedModal onClose={() => setShowModal(false)} />}
       <footer className="bg-[#FFD966] text-white py-5 w-full">
         <div className="w-full text-center px-4">
           <p>
