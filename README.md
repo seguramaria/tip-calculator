@@ -2,6 +2,8 @@
 
 This is a **React** web app created with **Vite** and styled with **Tailwind CSS**. Lets users browse products, filter by category, and add a tip, with custom hooks managing the order state.
 
+**[Live Preview](https://order-tip-calculator.netlify.app/)**
+
 ## Features
 
 - **Browse and Filter Products**: Products are categorized, allowing users to filter and find what they need easily.
