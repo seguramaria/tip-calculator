@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+# Tip Calculator 🍔🍟
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **React** web app created with **Vite** and styled with **Tailwind CSS**. Lets users browse products, filter by category, and add a tip, with custom hooks managing the order state.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Browse and Filter Products**: Products are categorized, allowing users to filter and find what they need easily.
+- **Order Management**: Custom hooks manage the state of the order, letting users add or remove products from the cart dynamically.
+- **Tip Calculation**: Users can add a tip to their order, which is reflected in the final price calculation.
+- **Shopping Cart**: Displays all added products with a live-updated total price.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To run the project locally:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/seguramaria/tip-calculator.git
+   cd repository-name
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+   ```bash
+   npm run dev
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+4. Open http://localhost:5173 in your browser to view the app.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Code Structure
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- `src/hooks`: Contains custom hooks for order management, including adding/removing products, calculating totals, and handling tips.
+- `src/components`: Holds UI components, like category filters, the cart, and the tip input form.
+- `src/styles`: Tailwind CSS configuration files for consistent styling.
+
+## Available Scripts
+
+- `npm run dev`: Runs the development server.
+- `npm run build`: Builds the app for production.
+- `npm run preview`: Previews the production build locally.
+
+## Tech Stack
+
+- **React** with **Vite** for fast bundling.
+- **Tailwind CSS** for styling.
+- **Custom Hooks** to manage order and tip calculations.
